@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, MessageCircle, MapPin, Briefcase, GraduationCap, Plane, Laptop, ArrowUpRight, Download } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, Briefcase, GraduationCap, Linkedin, Award, ArrowUpRight, Download } from "lucide-react";
 import { TiltCard } from "@/components/TiltCard";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,18 +8,32 @@ import { ShinyLink } from "@/components/ui/shiny-button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Muaaz Vorajee — Logistics Coordinator | FMCG Logistics" },
-      { name: "description", content: "Muaaz Vorajee — Logistics Coordinator based in Aylesbury. Extensive experience coordinating fast-paced logistics operations within FMCG manufacturing at Arla Foods." },
-      { name: "keywords", content: "Muaaz Vorajee, Logistics Coordinator, FMCG Logistics, Aylesbury, SAP, Despatch, Warehouse, Arla Foods" },
-      { property: "og:title", content: "Muaaz Vorajee — Logistics Coordinator" },
-      { property: "og:description", content: "Logistics Coordinator · FMCG Logistics · SAP · Aylesbury, UK." },
+      { title: "Muaaz Vorajee — IT Support Professional" },
+      {
+        name: "description",
+        content:
+          "Muaaz Vorajee — IT Support Professional based in Birmingham. Level 1 support experience across calls, email and support portals. Open to IT opportunities.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Muaaz Vorajee, IT Support, Technical Support, Customer Service Analyst, Level 1 Support, Birmingham, TalentBegins",
+      },
+      { property: "og:title", content: "Muaaz Vorajee — IT Support Professional" },
+      {
+        property: "og:description",
+        content: "IT Support Professional · Level 1 Support · Birmingham, UK · Open to opportunities.",
+      },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
       { property: "og:image", content: "/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "/og-image.png" },
-      { name: "twitter:title", content: "Muaaz Vorajee — Logistics Coordinator" },
-      { name: "twitter:description", content: "Logistics Coordinator · FMCG Logistics · SAP · Aylesbury, UK." },
+      { name: "twitter:title", content: "Muaaz Vorajee — IT Support Professional" },
+      {
+        name: "twitter:description",
+        content: "IT Support Professional · Level 1 Support · Birmingham, UK · Open to opportunities.",
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -29,12 +43,18 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Muaaz Vorajee",
-          jobTitle: "Logistics Coordinator",
-          telephone: "+447711894120",
-          email: "bobbyrawlings@icloud.com",
-          address: { "@type": "PostalAddress", addressLocality: "Aylesbury", addressRegion: "Buckinghamshire", addressCountry: "UK" },
-          alumniOf: ["Middlesex University", "The Cottesloe School"],
-          knowsAbout: ["Site Planning", "FMCG Logistics", "SAP", "Despatch Operations", "Warehouse Management"],
+          jobTitle: "IT Support Professional",
+          telephone: "+447498703277",
+          email: "vorajeemuaaz@gmail.com",
+          url: "https://www.linkedin.com/in/muaaz-vorajee-b39011315",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Birmingham",
+            addressRegion: "England",
+            addressCountry: "UK",
+          },
+          alumniOf: ["King Edward VI College", "Higham Lane School"],
+          knowsAbout: ["IT Support", "Technical Support", "Customer Service", "Customer Analysis"],
         }),
       },
     ],
@@ -42,84 +62,52 @@ export const Route = createFileRoute("/")({
   component: Resume,
 });
 
-const PHONE = "+447711894120";
-const PHONE_DISPLAY = "07711 894120";
-const EMAIL = "bobbyrawlings@icloud.com";
+const PHONE = "+447498703277";
+const PHONE_DISPLAY = "07498 703277";
+const EMAIL = "vorajeemuaaz@gmail.com";
+const LINKEDIN_URL = "https://www.linkedin.com/in/muaaz-vorajee-b39011315";
 const RESUME_PDF_PATH = "/Muaaz-Vorajee-Resume.pdf";
 const RESUME_PDF_FILENAME = "Muaaz Vorajee - Resume.pdf";
 
 const competencies = [
-  "Site Planning & Despatch",
-  "FMCG Logistics Operations",
-  "SAP & Microsoft Excel",
-  "Transport Planning",
-  "Warehouse & Cold Store Operations",
-  "Team Leadership",
-  "Health & Safety Compliance",
-  "Food Safety & Traceability",
-  "Continuous Improvement",
-  "Operational Risk Management",
+  "Customer Service",
+  "Customer Analysis",
+  "Technical Support",
+  "Level 1 IT Support",
+  "Calls, Email & Portal Support",
+  "Troubleshooting",
+  "Process-driven Support",
+  "Clear User Communication",
+  "Systems & Networking",
+  "Cybersecurity (developing)",
 ];
+
+const certifications = ["The Duke of Edinburgh's Award"];
 
 const experience = [
   {
-    role: "Site Planner",
-    company: "Arla Foods",
-    period: "November 2025 – Present",
-    sub: "High-volume FMCG manufacturing — daily despatch and logistics coordination",
+    role: "Customer Service Analyst",
+    company: "TalentBegins",
+    period: "June 2024 – August 2026",
+    sub: "United Kingdom · 24×7 multi-channel support for application users and administrators",
     points: [
-      "Coordinate daily despatch operations within a high-volume FMCG manufacturing environment, ensuring products are released accurately and on schedule.",
-      "Plan and prioritise workloads, responding quickly to operational changes while maintaining service levels.",
-      "Use SAP to manage operational information, maintain transport plans and ensure accurate system data.",
-      "Monitor schedules throughout the day, identifying potential risks and implementing solutions to minimise disruption.",
-      "Work closely with Production, Warehouse, Logistics and Transport teams to ensure smooth operational flow.",
-      "Maintain accurate operational documentation and ensure full product traceability.",
-      "Analyse operational performance and identify opportunities to improve efficiency and reduce turnaround times.",
-      "Support continuous improvement initiatives by reviewing processes and recommending operational improvements.",
-      "Lead and support operational teams while maintaining high standards of Health & Safety, food safety and compliance.",
-    ],
-  },
-  {
-    role: "Bay Technician",
-    company: "Arla Foods",
-    period: "June 2022 – November 2025",
-    sub: "Team leadership, despatch accuracy and transport planning in a fast-paced FMCG environment",
-    points: [
-      "Led by example in a fast-paced environment, managed a team of operatives professionally whilst fostering a positive and motivated team culture.",
-      "Planned ahead of schedule to ensure strict time slots were met and ensured goods were despatched accurately and on time, being proactive in preventing any delays.",
-      "Balanced multiple and conflicting workloads, demonstrating the ability to prioritise tasks efficiently and adapt to make robust decisions under pressure.",
-      "Experienced in utilising the SAP system, maintaining records in line with the Transport Plan and ensuring all information was accurate and up to date.",
-      "Continuously promoted service improvement, analysed team performance and revised strategies in order to achieve low Bay Turnover.",
-      "Verified vehicle documentation, trailer numbers, and load accuracy to confirm that all products met required standards and temperatures.",
-      "Ensured all documentation and records were completed precisely to enable traceability and issue resolution.",
-      "Enforced a high standard of Health & Safety awareness across all operations and logged safety observations through the LIA system.",
-    ],
-  },
-  {
-    role: "Despatch Operative",
-    company: "Arla Foods",
-    period: "June 2019 – June 2022",
-    sub: "Cold store operations, warehouse technology and food hygiene compliance",
-    points: [
-      "Completed all cold store operations, including order picking, physical inventory, loading and housekeeping duties.",
-      "Monitored advanced warehouse technology such as Automated Guided Vehicles to achieve daily targets efficiently.",
-      "Maintained strict adherence to Food Hygiene and Health & Safety standards.",
-      "Reported faults promptly, and performed basic maintenance and fault diagnosis to prevent downtime.",
+      "Provided level one support for users and administrators of applications, ensuring timely resolution of customer requests.",
+      "Managed and responded to customer calls, portal requests, and emails on a 24×7 team.",
+      "Assisted customers via multiple support channels and consistently followed documented procedures.",
     ],
   },
 ];
 
 const education = [
   {
-    degree: "BA (Hons) Film",
-    school: "Middlesex University",
-    period: "September 2016 – June 2018",
-    note: "Completed two years of a Film degree combining practical filmmaking with analytical and written study, developing strong communication and expression.",
+    degree: "A Levels: English Linguistics, Criminology, Law",
+    school: "King Edward VI College",
+    period: "September 2023 – 2025",
   },
   {
-    degree: "A Levels: Film Studies, English Literature, Art and Creative Writing",
-    school: "The Cottesloe School",
-    period: "September 2014 – June 2016",
+    degree: "GCSEs: English, Maths, Science, Computer Science, Engineering",
+    school: "Higham Lane School",
+    period: "September 2018 – June 2023",
   },
 ];
 
@@ -135,29 +123,31 @@ function Resume() {
                 Muaaz Vorajee
               </h1>
               <p className="mt-3 text-lg font-medium text-primary md:text-xl">
-                Logistics Coordinator
+                IT Support Professional
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                FMCG Logistics · SAP · Despatch &amp; Warehouse Operations
+                Level 1 Support · Multi-channel · Open to IT opportunities
               </p>
               <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
-                Site Planner with extensive experience coordinating fast-paced logistics operations within
-                a leading FMCG manufacturing environment. Experienced in planning workloads, managing
-                changing operational priorities and ensuring the timely movement of products through
-                effective coordination with transport, warehouse and production teams.
+                IT Support Professional with experience providing first-line support and helping users
+                resolve technical issues in a fast-paced support environment. In my previous role, I
+                provided Level 1 support to users and administrators, handling requests through calls,
+                emails and support portals.
               </p>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
-                Confident using SAP, Microsoft Excel and Microsoft Teams to manage operational data,
-                maintain accurate records and support informed decision-making. Known for remaining calm
-                under pressure, identifying risks early and adapting plans to meet service requirements
-                while maintaining high standards of accuracy and compliance.
+                I&apos;m comfortable troubleshooting issues, following established processes,
+                communicating clearly with users and making sure problems are handled efficiently from
+                start to finish. I&apos;m particularly interested in building my career within IT and
+                developing my skills across technical support, systems, networking and cybersecurity.
+              </p>
+              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
+                I enjoy solving problems, learning new technologies and finding practical solutions when
+                things don&apos;t go as expected. I&apos;m currently open to IT opportunities where I can
+                continue developing professionally, gain hands-on technical experience and contribute to a
+                strong support team.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> Aylesbury</span>
-                <span className="hidden h-1 w-1 rounded-full bg-border sm:inline-block" />
-                <span className="inline-flex items-center gap-1.5"><Laptop className="h-4 w-4 text-primary" /> Hybrid</span>
-                <span className="hidden h-1 w-1 rounded-full bg-border sm:inline-block" />
-                <span className="inline-flex items-center gap-1.5"><Plane className="h-4 w-4 text-primary" /> Open to national travel</span>
+                <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> Birmingham, England</span>
               </div>
             </TiltCard>
           </Reveal>
@@ -169,6 +159,7 @@ function Resume() {
                 <ContactButton href={`tel:${PHONE}`} icon={<Phone className="h-5 w-5" />} label="Call" value={PHONE_DISPLAY} tone="primary" />
                 <ContactButton href={`https://wa.me/${PHONE.replace("+", "")}`} icon={<MessageCircle className="h-5 w-5" />} label="WhatsApp" value="Message on WhatsApp" external tone="accent" />
                 <ContactButton href={`mailto:${EMAIL}`} icon={<Mail className="h-5 w-5" />} label="Email" value={EMAIL} />
+                <ContactButton href={LINKEDIN_URL} icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" value="Connect on LinkedIn" external />
                 <DownloadPdfButton href={RESUME_PDF_PATH} filename={RESUME_PDF_FILENAME} />
               </div>
             </TiltCard>
@@ -192,7 +183,7 @@ function Resume() {
             <Reveal
               key={`${job.company}-${job.role}`}
               delay={200 + i * 80}
-              className={i === 2 ? "md:col-span-6 lg:col-span-12" : "md:col-span-6 lg:col-span-6"}
+              className="md:col-span-6 lg:col-span-12"
             >
               <TiltCard className="h-full p-7 md:p-8" intensity={1}>
                 <div className="flex items-start justify-between gap-3">
@@ -217,7 +208,7 @@ function Resume() {
             </Reveal>
           ))}
 
-          <Reveal delay={440} className="md:col-span-6 lg:col-span-12">
+          <Reveal delay={360} className="md:col-span-6 lg:col-span-12">
             <TiltCard className="h-full p-7 md:p-8" intensity={1}>
               <Label>Education</Label>
               <div className="mt-4 grid gap-5 md:grid-cols-2">
@@ -230,11 +221,25 @@ function Resume() {
                       <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{e.period}</div>
                       <div className="mt-0.5 text-[15px] font-semibold text-ink">{e.degree}</div>
                       <div className="text-sm text-muted-foreground">{e.school}</div>
-                      {"note" in e && e.note && (
-                        <div className="mt-1 text-sm leading-relaxed text-foreground/70">{e.note}</div>
-                      )}
                     </div>
                   </div>
+                ))}
+              </div>
+            </TiltCard>
+          </Reveal>
+
+          <Reveal delay={420} className="md:col-span-6 lg:col-span-12">
+            <TiltCard className="h-full p-7 md:p-8" intensity={1}>
+              <Label>Certifications</Label>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {certifications.map((c) => (
+                  <span
+                    key={c}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-[13px] font-medium text-foreground/80"
+                  >
+                    <Award className="h-3.5 w-3.5 text-primary" />
+                    {c}
+                  </span>
                 ))}
               </div>
             </TiltCard>
@@ -271,7 +276,6 @@ function ContactButton({
 
   const openHref = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (!isNativeProtocol) return;
-    // Ensure mailto/tel open the system client even if a parent handler interferes
     event.preventDefault();
     window.location.href = href;
   };

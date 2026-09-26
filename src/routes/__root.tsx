@@ -75,8 +75,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Muaaz Vorajee — Logistics Coordinator | FMCG Logistics" },
-      { name: "description", content: "Logistics Coordinator based in Aylesbury — extensive experience coordinating fast-paced logistics operations within FMCG manufacturing at Arla Foods." },
+      { title: "Muaaz Vorajee — IT Support Professional" },
+      { name: "description", content: "IT Support Professional based in Birmingham — Level 1 support across calls, email and portals. Open to IT opportunities." },
       { name: "author", content: "Muaaz Vorajee" },
       { name: "theme-color", content: "#4575E6" },
       { property: "og:site_name", content: "Muaaz Vorajee" },
@@ -84,10 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Muaaz Vorajee — Logistics Coordinator — 07711 894120" },
+      { property: "og:image:alt", content: "Muaaz Vorajee — IT Support Professional — 07498 703277" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "/og-image.png" },
-      { name: "twitter:image:alt", content: "Muaaz Vorajee — Logistics Coordinator — 07711 894120" },
+      { name: "twitter:image:alt", content: "Muaaz Vorajee — IT Support Professional — 07498 703277" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
