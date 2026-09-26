@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 
 const FORM_NAME = "contact";
 /** Static skeleton path — Netlify Forms processes POST here (not the SSR catch-all). */
-const FORM_ENDPOINT = "/forms.html";
+const FORM_ENDPOINT = "/__forms.html";
 
 const fieldClass =
   "w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition placeholder:text-muted-foreground focus:border-primary/40 focus:ring-2 focus:ring-primary/15";
