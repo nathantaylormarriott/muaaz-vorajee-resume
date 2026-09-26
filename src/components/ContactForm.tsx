@@ -4,13 +4,8 @@ import { TiltCard } from "@/components/TiltCard";
 import { Reveal } from "@/components/Reveal";
 
 const FORM_NAME = "contact";
+/** Static skeleton path — Netlify Forms processes POST here (not the SSR catch-all). */
 const FORM_ENDPOINT = "/forms.html";
-
-function encodeFormData(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key] ?? "")}`)
-    .join("&");
-}
 
 const fieldClass =
   "w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition placeholder:text-muted-foreground focus:border-primary/40 focus:ring-2 focus:ring-primary/15";
@@ -24,7 +19,9 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries()) as Record<string, string>;
+    if (!formData.get("form-name")) {
+      formData.set("form-name", FORM_NAME);
+    }
 
     setStatus("submitting");
 
@@ -32,7 +29,7 @@ export function ContactForm() {
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormData({ "form-name": FORM_NAME, ...payload }),
+        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
       });
 
       if (!response.ok) throw new Error("Form submission failed");

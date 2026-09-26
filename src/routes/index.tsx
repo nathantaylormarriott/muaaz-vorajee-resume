@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, MessageCircle, MapPin, Briefcase, GraduationCap, Linkedin, Award, ArrowUpRight, Download } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, Briefcase, GraduationCap, Linkedin, ArrowUpRight, Download } from "lucide-react";
 import { TiltCard } from "@/components/TiltCard";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
@@ -56,8 +56,6 @@ const competencies = [
   "Systems & Networking",
   "Cybersecurity (developing)",
 ];
-
-const certifications = ["The Duke of Edinburgh's Award"];
 
 const experience = [
   {
@@ -211,23 +209,6 @@ function Resume() {
                       <div className="text-sm text-muted-foreground">{e.school}</div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </TiltCard>
-          </Reveal>
-
-          <Reveal delay={420} className="md:col-span-6 lg:col-span-12">
-            <TiltCard className="h-full p-7 md:p-8" intensity={1}>
-              <Label>Certifications</Label>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {certifications.map((c) => (
-                  <span
-                    key={c}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-[13px] font-medium text-foreground/80"
-                  >
-                    <Award className="h-3.5 w-3.5 text-primary" />
-                    {c}
-                  </span>
                 ))}
               </div>
             </TiltCard>
