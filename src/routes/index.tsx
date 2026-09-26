@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
           name: SITE.name,
           jobTitle: SITE.role,
           image: SITE.profileImage,
-          telephone: "+447498703277",
+          telephone: SITE.phoneTel,
           email: SITE.email,
           url: SITE.linkedInUrl,
           address: {
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
   component: Resume,
 });
 
-const PHONE = "+447498703277";
+const PHONE = SITE.phoneTel;
 const PHONE_DISPLAY = SITE.phoneDisplay;
 const EMAIL = SITE.email;
 const LINKEDIN_URL = SITE.linkedInUrl;
