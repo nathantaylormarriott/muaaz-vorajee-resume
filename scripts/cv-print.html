@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Muaaz Vorajee — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      :root {
+        --primary: #4575e6;
+        --ink: #1c2333;
+        --text: #3d4659;
+        --muted: #6b7280;
+        --border: #e2e8f0;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+        font-size: 9.75pt;
+        line-height: 1.45;
+        color: var(--text);
+        background: var(--paper);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .header {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--primary);
+        margin-bottom: 14px;
+      }
+
+      .photo {
+        width: 26mm;
+        height: 32mm;
+        object-fit: cover;
+        object-position: center 12%;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      .header-text {
+        flex: 1;
+        min-width: 0;
+      }
+
+      h1 {
+        font-size: 20pt;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        line-height: 1.1;
+      }
+
+      .role {
+        margin-top: 4px;
+        font-size: 11pt;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .tagline {
+        margin-top: 2px;
+        font-size: 9pt;
+        color: var(--muted);
+      }
+
+      .contact-row {
+        margin-top: 8px;
+        font-size: 9pt;
+        line-height: 1.5;
+        color: var(--text);
+      }
+
+      .contact-row span {
+        color: var(--muted);
+      }
+
+      h2 {
+        margin: 14px 0 6px;
+        font-size: 9pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        margin-top: 4px;
+        height: 1px;
+        background: var(--border);
+      }
+
+      p {
+        margin-bottom: 6px;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        margin-top: 2px;
+        font-size: 9pt;
+      }
+
+      .skills span::after {
+        content: " ·";
+        color: var(--muted);
+        margin-left: 8px;
+      }
+
+      .skills span:last-child::after {
+        content: "";
+      }
+
+      .job {
+        margin-top: 8px;
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .job-title {
+        font-weight: 700;
+        color: var(--ink);
+        font-size: 10.5pt;
+      }
+
+      .job-company {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .job-meta {
+        font-size: 9pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .job-sub {
+        margin-top: 2px;
+        font-size: 9pt;
+        color: var(--muted);
+      }
+
+      ul {
+        margin: 6px 0 0 1.1em;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 3px;
+        padding-left: 2px;
+      }
+
+      li::marker {
+        color: var(--primary);
+      }
+
+      .edu {
+        margin-top: 8px;
+      }
+
+      .edu-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .edu-degree {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .edu-school {
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="photo"
+        src="../public/muaaz-vorajee-profile.webp"
+        alt="Muaaz Vorajee"
+        width="816"
+        height="1020"
+      />
+      <div class="header-text">
+        <h1>Muaaz Vorajee</h1>
+        <p class="role">IT Support Professional</p>
+        <p class="tagline">Level 1 Support · Multi-channel · Open to IT opportunities</p>
+        <div class="contact-row">
+          <a href="mailto:info@muaazvorajee.com">info@muaazvorajee.com</a>
+          <span> · </span>
+          <a href="tel:+447498703277">07498 703277</a>
+          <span> · </span>
+          <a href="https://www.linkedin.com/in/muaaz-vorajee-b39011315">LinkedIn</a>
+          <br />
+          Birmingham, England, United Kingdom
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        IT Support Professional with first-line support experience in fast-paced environments. I&apos;ve
+        delivered Level 1 support to users and administrators through calls, email and support
+        portals—troubleshooting issues, following process, and communicating clearly through to
+        resolution.
+      </p>
+      <p>
+        I&apos;m developing my career across technical support, systems, networking and cybersecurity,
+        and I&apos;m open to IT roles where I can gain hands-on experience and contribute to a strong
+        support team.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core competencies</h2>
+      <div class="skills">
+        <span>Customer Service</span>
+        <span>Customer Analysis</span>
+        <span>Technical Support</span>
+        <span>Level 1 IT Support</span>
+        <span>Calls, Email &amp; Portal Support</span>
+        <span>Troubleshooting</span>
+        <span>Process-driven Support</span>
+        <span>Clear User Communication</span>
+        <span>Systems &amp; Networking</span>
+        <span>Cybersecurity (developing)</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <article class="job">
+        <div class="job-head">
+          <div>
+            <span class="job-title">Customer Service Analyst</span>
+            <span class="job-company"> · TalentBegins</span>
+          </div>
+          <span class="job-meta">June 2024 – August 2026</span>
+        </div>
+        <p class="job-sub">
+          United Kingdom · Level 1 support on a 24×7 desk · Phone, email &amp; support portal
+        </p>
+        <ul>
+          <li>
+            Delivered first-line (Level 1) support to end users and application administrators, helping
+            them resolve issues quickly and return to work with minimal disruption.
+          </li>
+          <li>
+            Handled inbound requests across phone, email and the support portal—logging, prioritising
+            and working tickets through to completion within agreed service expectations.
+          </li>
+          <li>
+            Troubleshot common application and access issues by following runbooks and documented
+            procedures, escalating only when required so specialist teams could focus on complex cases.
+          </li>
+          <li>
+            Communicated clearly with non-technical users: confirming impact, explaining next steps and
+            keeping customers updated while issues were investigated.
+          </li>
+          <li>
+            Worked as part of a 24×7 rota, maintaining consistent quality and handover discipline during
+            busy periods and out-of-hours cover.
+          </li>
+          <li>
+            Built strong customer service habits—active listening, accurate note-taking and professional
+            tone—while developing the foundations for a longer-term IT support career.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="edu-head">
+          <span class="edu-degree">A Levels: English Linguistics, Criminology, Law</span>
+          <span class="job-meta">September 2023 – 2025</span>
+        </div>
+        <p class="edu-school">King Edward VI College</p>
+      </div>
+      <div class="edu">
+        <div class="edu-head">
+          <span class="edu-degree">GCSEs: English, Maths, Science, Computer Science, Engineering</span>
+          <span class="job-meta">September 2018 – June 2023</span>
+        </div>
+        <p class="edu-school">Higham Lane School</p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+description: Read and edit Netlify DNS for this site (muaazvorajee.com). Use when the user mentions DNS, domain records, MX, TXT, CNAME, or email authentication records for this project.
+alwaysApply: false
+---
+
+# Netlify DNS (muaaz-vorajee)
+
+DNS for **muaazvorajee.com** is on **Netlify DNS**. Site config: `.cursor/netlify-dns.json`.
+
+Before changing records, load the **netlify-dns** skill (`~/.cursor/skills/netlify-dns/SKILL.md`) and use:
+
+```bash
+node ~/.cursor/skills/netlify-dns/scripts/netlify-dns.mjs list
+```
+
+Auth: `npx netlify login` (already used for deploys) or `NETLIFY_AUTH_TOKEN`.
+
+Do not remove managed NETLIFY apex/www records without explicit user approval.

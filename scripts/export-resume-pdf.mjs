@@ -1,48 +1,35 @@
 import { chromium } from "playwright";
 import { homedir } from "node:os";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const RESUME_URL = process.env.RESUME_URL ?? "http://localhost:8081/";
-const OUTPUT_PATH = join(homedir(), "Downloads", "Muaaz-Vorajee-Resume.pdf");
-
-async function preparePageForPrint(page) {
-  await page.evaluate(async () => {
-    document.querySelectorAll(".reveal").forEach((el) => {
-      el.classList.add("is-visible");
-      el.style.opacity = "1";
-      el.style.filter = "none";
-      el.style.transform = "none";
-    });
-
-    document.querySelectorAll(".tilt-card").forEach((el) => {
-      el.style.transform = "none";
-    });
-
-    await document.fonts.ready;
-  });
-}
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const HTML_PATH = join(__dirname, "cv-print.html");
+const PUBLIC_PATH = join(__dirname, "..", "public", "Muaaz-Vorajee-Resume.pdf");
+const DOWNLOADS_PATH = join(homedir(), "Downloads", "Muaaz-Vorajee-Resume.pdf");
+const DOWNLOADS_FRIENDLY = join(homedir(), "Downloads", "Muaaz Vorajee - Resume.pdf");
 
 async function main() {
   const browser = await chromium.launch();
-  const page = await browser.newPage({
-    viewport: { width: 1280, height: 1800 },
-  });
+  const page = await browser.newPage();
 
   try {
-    await page.goto(RESUME_URL, { waitUntil: "networkidle", timeout: 60_000 });
-    await preparePageForPrint(page);
+    await page.goto(`file://${HTML_PATH}`, { waitUntil: "networkidle", timeout: 60_000 });
+    await page.waitForFunction(() => document.fonts.ready);
     await page.emulateMedia({ media: "print" });
-    await page.waitForTimeout(300);
 
-    await page.pdf({
-      path: OUTPUT_PATH,
+    const pdfOptions = {
       format: "A4",
       printBackground: true,
-      preferCSSPageSize: true,
-      margin: { top: "10mm", right: "10mm", bottom: "10mm", left: "10mm" },
-    });
+      margin: { top: "0", right: "0", bottom: "0", left: "0" },
+    };
 
-    console.log(`Saved resume PDF to ${OUTPUT_PATH}`);
+    await page.pdf({ ...pdfOptions, path: PUBLIC_PATH });
+    await page.pdf({ ...pdfOptions, path: DOWNLOADS_PATH });
+    await page.pdf({ ...pdfOptions, path: DOWNLOADS_FRIENDLY });
+
+    console.log(`Saved public PDF to ${PUBLIC_PATH}`);
+    console.log(`Saved copy to ${DOWNLOADS_FRIENDLY}`);
   } finally {
     await browser.close();
   }

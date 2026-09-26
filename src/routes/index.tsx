@@ -90,23 +90,23 @@ const education = [
 function Resume() {
   return (
     <main className="min-h-screen bg-background px-4 py-8 sm:px-6 sm:py-12 lg:px-10 lg:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-6 lg:grid-cols-12 lg:items-stretch">
+        <div className="resume-page-grid mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-6 lg:grid-cols-12 lg:items-stretch">
 
-          <Reveal delay={0} className="md:col-span-6 lg:col-span-8 lg:h-full">
-            <div className="grid h-full gap-4 sm:gap-5 lg:grid-cols-8 lg:items-stretch">
-              <div className="min-h-0 lg:col-span-3 lg:h-full">
+          <Reveal delay={0} className="resume-print-hero md:col-span-6 lg:col-span-8 lg:h-full">
+            <div className="resume-print-hero-inner grid h-full gap-4 sm:gap-5 lg:grid-cols-8 lg:items-stretch">
+              <div className="resume-print-photo order-2 min-h-0 lg:order-1 lg:col-span-3 lg:h-full">
                 <img
                   src={SITE.profileImage}
                   alt={`${SITE.name} — professional headshot`}
                   width={SITE.profileImageWidth}
                   height={SITE.profileImageHeight}
-                  className="aspect-[4/5] w-full max-w-sm rounded-2xl border border-border bg-secondary object-cover object-[center_12%] shadow-sm lg:aspect-auto lg:h-full lg:max-h-none lg:max-w-none lg:min-h-0"
+                  className="aspect-[4/5] w-full rounded-2xl border border-border bg-secondary object-cover object-[center_12%] shadow-sm lg:aspect-auto lg:h-full lg:max-h-none lg:min-h-0"
                   decoding="async"
                   fetchPriority="high"
                 />
               </div>
-              <div className="min-h-0 lg:col-span-5 lg:h-full">
-            <TiltCard className="h-full p-8 md:p-10">
+              <div className="resume-print-profile order-1 min-h-0 lg:order-2 lg:col-span-5 lg:h-full">
+            <TiltCard className="resume-print-profile-card h-full p-8 md:p-10">
               <Label>Profile</Label>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink md:text-5xl">
                 {SITE.name}
@@ -136,8 +136,8 @@ function Resume() {
             </div>
           </Reveal>
 
-          <Reveal delay={80} className="md:col-span-6 lg:col-span-4 lg:h-full">
-            <TiltCard className="h-full min-h-0 p-6 md:p-8 lg:flex lg:flex-col" intensity={1}>
+          <Reveal delay={80} className="resume-print-contact md:col-span-6 lg:col-span-4 lg:h-full">
+            <TiltCard className="resume-print-contact-card h-full min-h-0 p-6 md:p-8 lg:flex lg:flex-col" intensity={1}>
               <Label>Contact</Label>
               <div className="mt-4 grid gap-3">
                 <ContactButton href={`tel:${PHONE}`} icon={<Phone className="h-5 w-5" />} label="Call" value={PHONE_DISPLAY} tone="primary" />
@@ -149,10 +149,10 @@ function Resume() {
             </TiltCard>
           </Reveal>
 
-          <Reveal delay={140} className="md:col-span-6 lg:col-span-12">
-            <TiltCard className="h-full p-7 md:p-8" intensity={1}>
+          <Reveal delay={140} className="resume-print-competencies md:col-span-6 lg:col-span-12">
+            <TiltCard className="resume-print-section-card h-full p-7 md:p-8" intensity={1}>
               <Label>Core Competencies</Label>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-ink md:text-2xl">Where I bring value</h3>
+              <h3 className="resume-print-section-title mt-2 text-xl font-semibold tracking-tight text-ink md:text-2xl">Where I bring value</h3>
               <div className="mt-6 flex flex-wrap gap-2">
                 {competencies.map((c) => (
                   <span key={c} className="rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition hover:border-primary/40 hover:bg-accent hover:text-accent-foreground">
@@ -167,9 +167,9 @@ function Resume() {
             <Reveal
               key={`${job.company}-${job.role}`}
               delay={200 + i * 80}
-              className="md:col-span-6 lg:col-span-12"
+              className="resume-print-experience md:col-span-6 lg:col-span-12"
             >
-              <TiltCard className="h-full p-7 md:p-8" intensity={1}>
+              <TiltCard className="resume-print-section-card h-full p-7 md:p-8" intensity={1}>
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <Label>{job.period}</Label>
@@ -192,8 +192,8 @@ function Resume() {
             </Reveal>
           ))}
 
-          <Reveal delay={360} className="md:col-span-6 lg:col-span-12">
-            <TiltCard className="h-full p-7 md:p-8" intensity={1}>
+          <Reveal delay={360} className="resume-print-education md:col-span-6 lg:col-span-12">
+            <TiltCard className="resume-print-section-card h-full p-7 md:p-8" intensity={1}>
               <Label>Education</Label>
               <div className="mt-4 grid gap-5 md:grid-cols-2">
                 {education.map((e) => (

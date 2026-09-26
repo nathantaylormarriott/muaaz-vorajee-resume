@@ -1,4 +1,6 @@
 export const SITE = {
+  /** Canonical origin for absolute links in PDFs and share metadata */
+  siteUrl: "https://muaazvorajee.com",
   name: "Muaaz Vorajee",
   role: "IT Support Professional",
   title: "Muaaz Vorajee — IT Support Professional",
