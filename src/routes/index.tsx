@@ -4,37 +4,11 @@ import { TiltCard } from "@/components/TiltCard";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import { ShinyLink } from "@/components/ui/shiny-button";
+import { SITE, pageShareMeta } from "@/lib/site-meta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Muaaz Vorajee — IT Support Professional" },
-      {
-        name: "description",
-        content:
-          "Muaaz Vorajee — IT Support Professional based in Birmingham. Level 1 support experience across calls, email and support portals. Open to IT opportunities.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Muaaz Vorajee, IT Support, Technical Support, Customer Service Analyst, Level 1 Support, Birmingham, TalentBegins",
-      },
-      { property: "og:title", content: "Muaaz Vorajee — IT Support Professional" },
-      {
-        property: "og:description",
-        content: "IT Support Professional · Level 1 Support · Birmingham, UK · Open to opportunities.",
-      },
-      { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/" },
-      { property: "og:image", content: "/og-image.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/og-image.png" },
-      { name: "twitter:title", content: "Muaaz Vorajee — IT Support Professional" },
-      {
-        name: "twitter:description",
-        content: "IT Support Professional · Level 1 Support · Birmingham, UK · Open to opportunities.",
-      },
-    ],
+    meta: pageShareMeta(),
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
       {
@@ -42,11 +16,12 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Muaaz Vorajee",
-          jobTitle: "IT Support Professional",
+          name: SITE.name,
+          jobTitle: SITE.role,
+          image: SITE.profileImage,
           telephone: "+447498703277",
-          email: "vorajeemuaaz@gmail.com",
-          url: "https://www.linkedin.com/in/muaaz-vorajee-b39011315",
+          email: SITE.email,
+          url: SITE.linkedInUrl,
           address: {
             "@type": "PostalAddress",
             addressLocality: "Birmingham",
@@ -63,9 +38,9 @@ export const Route = createFileRoute("/")({
 });
 
 const PHONE = "+447498703277";
-const PHONE_DISPLAY = "07498 703277";
-const EMAIL = "vorajeemuaaz@gmail.com";
-const LINKEDIN_URL = "https://www.linkedin.com/in/muaaz-vorajee-b39011315";
+const PHONE_DISPLAY = SITE.phoneDisplay;
+const EMAIL = SITE.email;
+const LINKEDIN_URL = SITE.linkedInUrl;
 const RESUME_PDF_PATH = "/Muaaz-Vorajee-Resume.pdf";
 const RESUME_PDF_FILENAME = "Muaaz Vorajee - Resume.pdf";
 
@@ -119,11 +94,22 @@ function Resume() {
           <Reveal delay={0} className="md:col-span-6 lg:col-span-7">
             <TiltCard className="h-full p-8 md:p-10">
               <Label>Profile</Label>
-              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink md:text-5xl lg:text-6xl">
-                Muaaz Vorajee
+              <div className="mt-4 flex flex-col gap-6 sm:flex-row sm:items-start">
+                <img
+                  src={SITE.profileImage}
+                  alt={`${SITE.name} — professional headshot`}
+                  width={SITE.profileImageWidth}
+                  height={SITE.profileImageHeight}
+                  className="h-44 w-36 shrink-0 rounded-2xl border border-border bg-secondary object-cover object-[center_12%] shadow-sm sm:h-48 sm:w-40 md:h-52 md:w-44"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+                <div className="min-w-0 flex-1">
+              <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl lg:text-6xl">
+                {SITE.name}
               </h1>
               <p className="mt-3 text-lg font-medium text-primary md:text-xl">
-                IT Support Professional
+                {SITE.role}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Level 1 Support · Multi-channel · Open to IT opportunities
@@ -148,6 +134,8 @@ function Resume() {
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> Birmingham, England</span>
+              </div>
+                </div>
               </div>
             </TiltCard>
           </Reveal>

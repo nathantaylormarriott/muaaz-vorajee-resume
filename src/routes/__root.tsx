@@ -11,6 +11,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { rootShareMeta } from "@/lib/site-meta";
 
 function NotFoundComponent() {
   return (
@@ -74,19 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Muaaz Vorajee — IT Support Professional" },
-      { name: "description", content: "IT Support Professional based in Birmingham — Level 1 support across calls, email and portals. Open to IT opportunities." },
-      { name: "author", content: "Muaaz Vorajee" },
-      { name: "theme-color", content: "#4575E6" },
-      { property: "og:site_name", content: "Muaaz Vorajee" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-image.png" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Muaaz Vorajee — IT Support Professional — 07498 703277" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/og-image.png" },
-      { name: "twitter:image:alt", content: "Muaaz Vorajee — IT Support Professional — 07498 703277" },
+      ...rootShareMeta(),
     ],
     links: [
       { rel: "stylesheet", href: appCss },
