@@ -62,11 +62,14 @@ const experience = [
     role: "Customer Service Analyst",
     company: "TalentBegins",
     period: "June 2024 – August 2026",
-    sub: "United Kingdom · 24×7 multi-channel support for application users and administrators",
+    sub: "United Kingdom · Level 1 support on a 24×7 desk · Phone, email & support portal",
     points: [
-      "Provided level one support for users and administrators of applications, ensuring timely resolution of customer requests.",
-      "Managed and responded to customer calls, portal requests, and emails on a 24×7 team.",
-      "Assisted customers via multiple support channels and consistently followed documented procedures.",
+      "Delivered first-line (Level 1) support to end users and application administrators, helping them resolve issues quickly and return to work with minimal disruption.",
+      "Handled inbound requests across phone, email and the support portal—logging, prioritising and working tickets through to completion within agreed service expectations.",
+      "Troubleshot common application and access issues by following runbooks and documented procedures, escalating only when required so specialist teams could focus on complex cases.",
+      "Communicated clearly with non-technical users: confirming impact, explaining next steps and keeping customers updated while issues were investigated.",
+      "Worked as part of a 24×7 rota, maintaining consistent quality and handover discipline during busy periods and out-of-hours cover.",
+      "Built strong customer service habits—active listening, accurate note-taking and professional tone—while developing the foundations for a longer-term IT support career.",
     ],
   },
 ];
@@ -87,23 +90,25 @@ const education = [
 function Resume() {
   return (
     <main className="min-h-screen bg-background px-4 py-8 sm:px-6 sm:py-12 lg:px-10 lg:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-6 lg:grid-cols-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-6 lg:grid-cols-12 lg:items-stretch">
 
-          <Reveal delay={0} className="md:col-span-6 lg:col-span-7">
-            <TiltCard className="h-full p-8 md:p-10">
-              <Label>Profile</Label>
-              <div className="mt-4 flex flex-col gap-6 sm:flex-row sm:items-start">
+          <Reveal delay={0} className="md:col-span-6 lg:col-span-8 lg:h-full">
+            <div className="grid h-full gap-4 sm:gap-5 lg:grid-cols-8 lg:items-stretch">
+              <div className="min-h-0 lg:col-span-3 lg:h-full">
                 <img
                   src={SITE.profileImage}
                   alt={`${SITE.name} — professional headshot`}
                   width={SITE.profileImageWidth}
                   height={SITE.profileImageHeight}
-                  className="h-44 w-36 shrink-0 rounded-2xl border border-border bg-secondary object-cover object-[center_12%] shadow-sm sm:h-48 sm:w-40 md:h-52 md:w-44"
+                  className="aspect-[4/5] w-full max-w-sm rounded-2xl border border-border bg-secondary object-cover object-[center_12%] shadow-sm lg:aspect-auto lg:h-full lg:max-h-none lg:max-w-none lg:min-h-0"
                   decoding="async"
                   fetchPriority="high"
                 />
-                <div className="min-w-0 flex-1">
-              <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl lg:text-6xl">
+              </div>
+              <div className="min-h-0 lg:col-span-5 lg:h-full">
+            <TiltCard className="h-full p-8 md:p-10">
+              <Label>Profile</Label>
+              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink md:text-5xl">
                 {SITE.name}
               </h1>
               <p className="mt-3 text-lg font-medium text-primary md:text-xl">
@@ -113,33 +118,26 @@ function Resume() {
                 Level 1 Support · Multi-channel · Open to IT opportunities
               </p>
               <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
-                IT Support Professional with experience providing first-line support and helping users
-                resolve technical issues in a fast-paced support environment. In my previous role, I
-                provided Level 1 support to users and administrators, handling requests through calls,
-                emails and support portals.
+                IT Support Professional with first-line support experience in fast-paced environments.
+                I&apos;ve delivered Level 1 support to users and administrators through calls, email and
+                support portals—troubleshooting issues, following process, and communicating clearly through
+                to resolution.
               </p>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
-                I&apos;m comfortable troubleshooting issues, following established processes,
-                communicating clearly with users and making sure problems are handled efficiently from
-                start to finish. I&apos;m particularly interested in building my career within IT and
-                developing my skills across technical support, systems, networking and cybersecurity.
-              </p>
-              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-foreground/80">
-                I enjoy solving problems, learning new technologies and finding practical solutions when
-                things don&apos;t go as expected. I&apos;m currently open to IT opportunities where I can
-                continue developing professionally, gain hands-on technical experience and contribute to a
-                strong support team.
+                I&apos;m developing my career across technical support, systems, networking and
+                cybersecurity, and I&apos;m open to IT roles where I can gain hands-on experience and
+                contribute to a strong support team.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> Birmingham, England</span>
               </div>
-                </div>
-              </div>
             </TiltCard>
+              </div>
+            </div>
           </Reveal>
 
-          <Reveal delay={80} className="md:col-span-6 lg:col-span-5">
-            <TiltCard className="h-full p-6 md:p-8" intensity={1}>
+          <Reveal delay={80} className="md:col-span-6 lg:col-span-4 lg:h-full">
+            <TiltCard className="h-full min-h-0 p-6 md:p-8 lg:flex lg:flex-col" intensity={1}>
               <Label>Contact</Label>
               <div className="mt-4 grid gap-3">
                 <ContactButton href={`tel:${PHONE}`} icon={<Phone className="h-5 w-5" />} label="Call" value={PHONE_DISPLAY} tone="primary" />
