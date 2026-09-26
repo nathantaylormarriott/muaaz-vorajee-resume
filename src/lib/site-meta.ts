@@ -8,7 +8,7 @@ export const SITE = {
     "IT Support Professional · Level 1 support · Birmingham, UK · Open to IT opportunities.",
   keywords:
     "Muaaz Vorajee, IT Support, Technical Support, Customer Service Analyst, Level 1 Support, Birmingham, TalentBegins",
-  email: "vorajeemuaaz@gmail.com",
+  email: "info@muaazvorajee.com",
   phoneDisplay: "07498 703277",
   location: "Birmingham, England, United Kingdom",
   linkedInUrl: "https://www.linkedin.com/in/muaaz-vorajee-b39011315",
